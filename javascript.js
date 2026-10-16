@@ -98,7 +98,6 @@ async function search(city) {
   try {
     const data = await fetchWeather(city);
     lastCity = city;
-    localStorage.setItem("lastCity", city);
     render(data);
   } catch (err) {
     // fetch() throws a TypeError when the network is down
@@ -124,9 +123,6 @@ unitButtons.forEach((btn) => {
   });
 });
 
-// Load the last searched city when the page opens
-const saved = localStorage.getItem("lastCity");
-if (saved) {
-  input.value = saved;
-  search(saved);
-}
+// Clear any existing stored city so the user enters location fresh on each refresh
+localStorage.removeItem("lastCity");
+input.value = "";
