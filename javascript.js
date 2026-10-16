@@ -1,5 +1,5 @@
 // 1. Paste your OpenWeatherMap API key here (https://openweathermap.org/api)
-const API_KEY = "YOUR_API_KEY_HERE";
+const API_KEY = "a120b4041faf50ca7c0b8e0b808ab350";
 const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 
 // Grab the elements from index.html
