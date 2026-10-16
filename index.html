@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main>
+    <!-- Search box -->
+    <form id="search-form" role="search">
+      <input id="city-input" type="search" placeholder="Search for a city..." aria-label="City name" autocomplete="off" required>
+      <button id="search-btn" type="submit">Search</button>
+    </form>
+
+    <!-- Shown before a search and when something goes wrong -->
+    <p id="message" class="card message" role="status">Search for a city to see its current weather.</p>
+
+    <!-- Weather result (hidden until we have data) -->
+    <section id="weather" class="card" aria-live="polite" hidden>
+      <div class="place">
+        <h1 class="city" id="city"></h1>
+        <span class="date" id="date"></span>
+      </div>
+
+      <div class="now">
+        <div class="temp"><span id="temp"></span><sup id="unit-label">°C</sup></div>
+        <img id="icon" alt="">
+      </div>
+      <p class="desc" id="desc"></p>
+
+      <dl class="stats">
+        <div class="stat"><dt>Humidity</dt><dd id="humidity"></dd></div>
+        <div class="stat"><dt>Feels like</dt><dd id="feels"></dd></div>
+        <div class="stat"><dt>Wind</dt><dd id="wind"></dd></div>
+      </dl>
+
+      <div class="units" role="group" aria-label="Temperature unit">
+        <button type="button" data-unit="metric" aria-pressed="true">°C</button>
+        <button type="button" data-unit="imperial" aria-pressed="false">°F</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="javascript.js"></script>
+</body>
+</html>
